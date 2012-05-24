@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+        <TextView
+			android:id="@+id/textView_List_Title"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:paddingLeft="6dip"
+			android:paddingRight="6dip"
+			android:paddingTop="6dip"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:text="@string/textView_List_Title" />
+		<View
+			style="@style/Theme.EOT.Black.Divider" />
+	    <ExpandableListView
+	        android:id="@+id/expandableListView1"
+	        style="@style/Theme.EOT.Black.ExpandableListView"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content" />
+    </LinearLayout>    
+</FrameLayout>

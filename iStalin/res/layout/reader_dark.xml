@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+        
+	    <ScrollView
+	        android:id="@+id/scrollView1"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        style="@style/Theme.EOT.Black.ScrollView">
+	
+	        <LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:orientation="vertical" >
+	            
+	            	<TextView
+						android:id="@+id/textView_Vol_Title"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:paddingLeft="6dip"
+						android:paddingRight="6dip"
+						android:paddingTop="6dip"
+						android:textAppearance="?android:attr/textAppearanceMedium"
+						android:text="@string/app_name" />
+					<View
+						style="@style/Theme.EOT.Black.Divider" />
+	
+	                <TextView
+	                    android:id="@+id/textView2"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text=""
+	                    android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	        </LinearLayout>
+	    </ScrollView>
+	</LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>   
+    
+    <!-- EOT themes -->
+    
+    <style name="Theme.EOT.Light" parent="@android:style/Theme.Light" />
+    <style name="Theme.EOT.Light.NoTitleBar" parent="@android:style/Theme.Light.NoTitleBar" />
+    <style name="Theme.EOT.Light.NoTitleBar.FullScreen" parent="@android:style/Theme.Light.NoTitleBar.Fullscreen" />
+    
+    <style name="Theme.EOT.Black" parent="@android:style/Theme.Black">
+       <item name="android:background">#000000</item> 
+    </style>
+    <style name="Theme.EOT.Black.NoTitleBar" parent="@android:style/Theme.Black.NoTitleBar">
+        <item name="android:background">#000000</item>
+    </style>
+    <style name="Theme.EOT.Black.NoTitleBar.FullScreen" parent="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+        <item name="android:background">#000000</item>
+    </style>
+    
+    <style name="Theme.EOT.Light.ExpandableListView" parent="@android:style/Widget.ExpandableListView">
+	    <item name="android:divider">@drawable/devider</item>
+	    <item name="android:dividerHeight">1dp</item>
+	    <item name="android:scrollbarAlwaysDrawVerticalTrack">true</item> 
+		<item name="android:scrollbarThumbVertical">@drawable/thumb01</item>
+	</style>
+	
+    <style name="Theme.EOT.Black.ExpandableListView" parent="@android:style/Widget.ExpandableListView">
+	    <item name="android:divider">@drawable/devider_dark</item>
+	    <item name="android:dividerHeight">1dp</item>
+	    <item name="android:scrollbarAlwaysDrawVerticalTrack">true</item> 
+		<item name="android:scrollbarThumbVertical">@drawable/thumb01_dark</item>
+	</style>
+	
+    <style name="Theme.EOT.Light.ScrollView" parent="@android:style/Widget.ScrollView">
+        <item name="android:scrollbarAlwaysDrawVerticalTrack">true</item>
+        <item name="android:scrollbarThumbVertical">@drawable/thumb01</item>
+    </style>
+    
+    <style name="Theme.EOT.Black.ScrollView" parent="@android:style/Widget.ScrollView">
+        <item name="android:scrollbarAlwaysDrawVerticalTrack">true</item>
+        <item name="android:scrollbarThumbVertical">@drawable/thumb01_dark</item>
+    </style>
+    
+    <style name="Theme.EOT.Light.Empty">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1dip</item>
+        <item name="android:layout_marginLeft">6dip</item>
+        <item name="android:layout_marginRight">6dip</item>
+        <item name="android:layout_marginTop">6dip</item>
+        <item name="android:layout_marginBottom">6dip</item>
+    </style>
+    
+    <style name="Theme.EOT.Light.Divider" parent="@style/Theme.EOT.Light.Empty">
+        <item name="android:background">#cc0000</item>
+    </style>
+    
+    <style name="Theme.EOT.Black.Divider" parent="@style/Theme.EOT.Light.Empty">
+        <item name="android:background">#7aa0af</item>
+    </style>
+    
+    <style name="Theme.EOT.Light.TextView" parent="@android:style/Widget.TextView" />
+        
+    <style name="Theme.EOT.Light.TextView.Bold" parent="@style/Theme.EOT.Light.TextView">
+		<item name="android:paddingLeft">6dip</item>
+		<item name="android:paddingRight">6dip</item>
+		<item name="android:paddingTop">2dip</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:textColor">#000000</item>
+		<item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+    </style>
+    
+    <style name="Theme.EOT.Light.TextView.Bold.Red" parent="@style/Theme.EOT.Light.TextView.Bold">
+        <item name="android:textColor">#cc0000</item>
+    </style>
+    
+</resources>

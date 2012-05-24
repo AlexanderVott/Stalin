@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Сталин: Полное собрание сочинений</string>
+    <string name="quit">Quit</string>
+    <string name="install_modules">Install modules</string>
+    <string name="update_modules">Update modules</string>
+    <string name="loading">Loading...</string>
+    <string name="loading_list_modules">Loading list of modules</string>
+    <string name="failed_loading_list_modules">Failed loading list of modules</string>
+    <string name="open">Open</string>
+    <string name="delete">Delete</string>
+    <string name="actionbar_activity_not_found">Failed to open intent...</string>
+    
+    <string name="toast_dont_save_scroll">Позиция не сохранена</string>
+    
+    <string name="textView_List_Title">Содержание</string>
+    
+    <string name="menu_settings">Настройки</string>
+    <string name="menu_about">О программе</string>
+    
+    <string name="pref">Настройки</string>
+    <string name="pref_section_title_one">Оформление</string>
+    <string name="pref_dark_theme_title">Тёмный интерфейс</string>
+    <string name="pref_dark_theme_summary">Переключатель между тёмным и светлым интерфейсами.</string>
+    <string name="pref_bg_title">Включить фон</string>
+    <string name="pref_bg_summary"></string>
+    <string name="pref_section_title_two">Функционал</string>
+    <string name="pref_open_vol_title">Запоминать открытое</string>
+    <string name="pref_open_vol_summary">Открывать последнюю главу при запуске приложения</string>
+    
+    <!-- Авторы -->
+    
+    <string name="author_title_developer">Разработка</string>
+    <string name="author_title_thanks">Благодарность</string>
+    <string name="author_develoepr_0">Киселёв Александр aka Igroman</string>
+    
+    <string name="author_thanks_0">Морозову Александру</string>
+    
+    <string name="slogan">Встретимся в СССР!</string>
+</resources>
