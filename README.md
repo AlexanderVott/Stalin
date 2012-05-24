@@ -23,9 +23,7 @@
 ![scr1](https://lh5.googleusercontent.com/-RbRJQpA_knw/T6KWG3Zby3I/AAAAAAAAEP0/4VGsKtA0vCo/s480/device-2012-05-03-202556.png "scr1")
 ![scr2](https://lh4.googleusercontent.com/-D-nHOmNpIm0/T6KWG7d-w0I/AAAAAAAAEPk/6KnsDoAIPwI/s480/device-2012-05-03-202609.png "scr2")
 ![scr3](https://lh4.googleusercontent.com/-XciAtWhHF20/T6KWHSNQEVI/AAAAAAAAEPw/akvDGvDoHNw/s480/device-2012-05-03-202644.png "scr3")
-
 ![scr4](https://lh3.googleusercontent.com/-I9HoE-dCTAY/T6KWHXyf7kI/AAAAAAAAEPo/gLp40_WYhXg/s480/device-2012-05-03-202709.png "scr4")
 ![scr5](https://lh3.googleusercontent.com/-CNAvx4Y_MG8/T6KWIArMTwI/AAAAAAAAEP4/v6fJvIThmjo/s480/device-2012-05-03-202723.png "scr5")
 ![scr6](https://lh6.googleusercontent.com/-2UzX7l1IF8Y/T6KWIG_rrrI/AAAAAAAAEQQ/nqzkqIP2pzA/s480/device-2012-05-03-202733.png "scr6")
-
 ![scr7](https://lh6.googleusercontent.com/-uUZawwBoPeM/T6KWIbJWTDI/AAAAAAAAEQA/8Av4z7Tc0MQ/s480/device-2012-05-03-202741.png "scr7")
