@@ -32,9 +32,11 @@
     
     <string name="author_title_developer">Разработка</string>
     <string name="author_title_thanks">Благодарность</string>
-    <string name="author_develoepr_0">Киселёв Александр aka Igroman</string>
-    
-    <string name="author_thanks_0">Морозову Александру</string>
+    <string name="author_title_design_icons">Дизайн иконки</string>
+    <string name="author_develoepr_0">Киселёв Александр</string>    
+    <string name="author_thanks_0">Марии Куликовой</string>    
+    <string name="author_thanks_1">Александру Морозову</string>
+    <string name="author_design_icons">Илья Ефимов</string>
     
     <string name="slogan">Встретимся в СССР!</string>
 </resources>
