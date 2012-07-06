@@ -2,27 +2,24 @@ package com.FouregoStudio.Stalin;
 
 import org.json.JSONException;
 
-import com.FouregoStudio.Stalin.Preferences;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListView;
-import android.widget.ImageView;
-import android.widget.Toast;
 import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.ExpandableListView.OnGroupClickListener;
 import android.widget.ExpandableListView.OnGroupCollapseListener;
 import android.widget.ExpandableListView.OnGroupExpandListener;
+import android.widget.ImageView;
 import android.widget.SimpleExpandableListAdapter;
+import android.widget.Toast;
 
 public class ListOfCollectionsActivity extends Activity {
 	
@@ -52,7 +49,7 @@ public class ListOfCollectionsActivity extends Activity {
 			setContentView(R.layout.list);
         } 
         
-        // если наличествует imageView_BG - обрабатываем настройки (в тёмной версии layout нет такого объекта)
+        // РµСЃР»Рё РЅР°Р»РёС‡РµСЃС‚РІСѓРµС‚ imageView_BG - РѕР±СЂР°Р±Р°С‚С‹РІР°РµРј РЅР°СЃС‚СЂРѕР№РєРё (РІ С‚С‘РјРЅРѕР№ РІРµСЂСЃРёРё layout РЅРµС‚ С‚Р°РєРѕРіРѕ РѕР±СЉРµРєС‚Р°)
         if (findViewById(R.id.imageView_BG) != null)
 	        if (settings.getBoolean("show_bg", true))
 				((ImageView) findViewById(R.id.imageView_BG)).setVisibility(View.VISIBLE);
@@ -74,7 +71,7 @@ public class ListOfCollectionsActivity extends Activity {
         list.setOnChildClickListener(new OnChildClickListener() {
 			public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
 				SharedPreferences.Editor editor = settings.edit();
-				// нажали на элемент
+				// СЃРѕС…СЂР°РЅСЏРµРј РїРѕР·РёС†РёСЋ РїСЂРѕРєСЂСѓС‚РєРё
 				int groupId = 0;
 				try {
 					groupId = adapterHelper.getGroupNum(adapterHelper.getGroupText(groupPosition));
@@ -109,7 +106,7 @@ public class ListOfCollectionsActivity extends Activity {
 		});
         
         if ( ((settings.getBoolean("open_vol", false)) && (settings.getInt("childId", -1) != -1)) || (settings.getBoolean("restore", false)) ) {
-        	// сбрасываем "восстановление"
+        	// СЃР±СЂР°СЃС‹РІР°РµРј "РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ"
         	SharedPreferences.Editor editor = settings.edit();
     		editor.putBoolean("restore", false);
     		editor.commit();
@@ -147,27 +144,27 @@ public class ListOfCollectionsActivity extends Activity {
     	if (resultCode == RESULT_OK) {
 	    	switch (requestCode) {
 		    	case RES_READER: {
-		    		// сохраняем позицию прокрутки
+		    		// СЃРѕС…СЂР°РЅСЏРµРј РїРѕР·РёС†РёСЋ РїСЂРѕРєСЂСѓС‚РєРё
 		    		SharedPreferences.Editor editor = settings.edit();
-		    		// сохраняем позицию скролла
+		    		// СЃРѕС…СЂР°РЅСЏРµРј РїРѕР·РёС†РёСЋ СЃРєСЂРѕР»Р»Р°
 		    		editor.putInt("scroll", data.getExtras().getInt("scroll"));
 		    		
 		    		if (data.getExtras().getBoolean("restart")) {
-			    		// выключаем splash, указываем последующий возврат параметра в исходное состояние
+		    			// РІС‹РєР»СЋС‡Р°РµРј splash, СѓРєР°Р·С‹РІР°РµРј РїРѕСЃР»РµРґСѓСЋС‰РёР№ РІРѕР·РІСЂР°С‚ РїР°СЂР°РјРµС‚СЂР° РІ РёСЃС…РѕРґРЅРѕРµ СЃРѕСЃС‚РѕСЏРЅРёРµ
 			    		editor.putBoolean("show_splash", false);
 			    		if (!settings.getBoolean("show_splash", false)) {
 			    			editor.putBoolean("one_hide_splash", true);
 			    		}
-			    		// параметр восстановления открытой главы
+			    		// РїР°СЂР°РјРµС‚СЂ РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёСЏ РѕС‚РєСЂС‹С‚РѕР№ РіР»Р°РІС‹
 			    		editor.putBoolean("restore", true);
 			    		
 			    		editor.commit();
 			    		
-			    		// перезапускаем приложение
+			    		// РїРµСЂРµР·Р°РїСѓСЃРєР°РµРј РїСЂРёР»РѕР¶РµРЅРёРµ
 			    		Intent intent = getBaseContext().getPackageManager().getLaunchIntentForPackage(getBaseContext().getPackageName());
 			    		intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
 			    		startActivity(intent);
-			    		// закрываем уже устаревшее приложение, т.к. запущено новое
+			    		// Р·Р°РєСЂС‹РІР°РµРј СѓР¶Рµ СѓСЃС‚Р°СЂРµРІС€РµРµ РїСЂРёР»РѕР¶РµРЅРёРµ, С‚.Рє. Р·Р°РїСѓС‰РµРЅРѕ РЅРѕРІРѕРµ
 			    		System.exit(0);
 		    		} else 
 		    			editor.commit();

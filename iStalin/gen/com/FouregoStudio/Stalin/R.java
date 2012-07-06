@@ -67,8 +67,11 @@ containing a value of this type.
     public static final class string {
         public static final int actionbar_activity_not_found=0x7f070009;
         public static final int app_name=0x7f070000;
-        public static final int author_develoepr_0=0x7f070019;
-        public static final int author_thanks_0=0x7f07001a;
+        public static final int author_design_icons=0x7f07001d;
+        public static final int author_develoepr_0=0x7f07001a;
+        public static final int author_thanks_0=0x7f07001b;
+        public static final int author_thanks_1=0x7f07001c;
+        public static final int author_title_design_icons=0x7f070019;
         /**  Авторы 
  Авторы 
          */
@@ -92,7 +95,7 @@ containing a value of this type.
         public static final int pref_section_title_one=0x7f07000f;
         public static final int pref_section_title_two=0x7f070014;
         public static final int quit=0x7f070001;
-        public static final int slogan=0x7f07001b;
+        public static final int slogan=0x7f07001e;
         public static final int textView_List_Title=0x7f07000b;
         public static final int toast_dont_save_scroll=0x7f07000a;
         public static final int update_modules=0x7f070003;

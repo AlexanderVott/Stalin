@@ -6,19 +6,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
-import android.opengl.Visibility;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.text.Html;
-import android.text.StaticLayout;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnTouchListener;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -28,8 +23,10 @@ public class ReaderDisplay extends Activity {
 
 	TextView textView;
 	ScrollView scrollView;
+	SharedPreferences settings;
 	
 	float oldX = 0;
+	int scrollY = 0;
 	
     /** Called when the activity is first created. */
     @Override
@@ -38,7 +35,7 @@ public class ReaderDisplay extends Activity {
     	
 		SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 		
-		// ÏÂÌˇÂÏ ÚÂÏÛ ‚ Á‡‚ËÒËÏÓÒÚË ÓÚ Ì‡ÒÚÓÂÍ
+		// –º–µ–Ω—è–µ–º —Ç–µ–º—É –≤ –∑–∞–≤–∏—Å–∏–º–æ—Å—Ç–∏ –æ—Ç –Ω–∞—Å—Ç—Ä–æ–µ–∫
 		if (settings.getBoolean("dark_theme", false)) {
 			setTheme(R.style.Theme_EOT_Black_NoTitleBar_FullScreen);
 			setContentView(R.layout.reader_dark);
@@ -47,7 +44,7 @@ public class ReaderDisplay extends Activity {
 			setContentView(R.layout.reader);
 		}
 		
-		// ÂÒÎË Ì‡ÎË˜ÂÒÚ‚ÛÂÚ imageView_BG - Ó·‡·‡Ú˚‚‡ÂÏ Ì‡ÒÚÓÈÍË (‚ Ú∏ÏÌÓÈ ‚ÂÒËË layout ÌÂÚ Ú‡ÍÓ„Ó Ó·˙ÂÍÚ‡)
+		// –µ—Å–ª–∏ –Ω–∞–ª–∏—á–µ—Å—Ç–≤—É–µ—Ç imageView_BG - –æ–±—Ä–∞–±–∞—Ç—ã–≤–∞–µ–º –Ω–∞—Å—Ç—Ä–æ–π–∫–∏ (–≤ —Ç—ë–º–Ω–æ–π –≤–µ—Ä—Å–∏–∏ layout –Ω–µ—Ç —Ç–∞–∫–æ–≥–æ –æ–±—ä–µ–∫—Ç–∞)
         if (findViewById(R.id.imageView_BG) != null)
 	        if (settings.getBoolean("show_bg", true))
 				((ImageView) findViewById(R.id.imageView_BG)).setVisibility(View.VISIBLE);
@@ -71,17 +68,59 @@ public class ReaderDisplay extends Activity {
 		((TextView) findViewById(R.id.textView_Vol_Title)).setText(getIntent().getExtras().getString("groupText"));
 		
 		scrollView = (ScrollView) findViewById(R.id.scrollView1);
-		// ÔÂÂÏ‡Ú˚‚‡ÂÏ Ì‡ ÔÓÒÎÂ‰Ì˛˛ ÒÓı‡Ì∏ÌÌÛ˛ ÔË Á‡Í˚ÚËË
+		scrollY = getIntent().getExtras().getInt("scroll");
+		// –ø–µ—Ä–µ–º–∞—Ç—ã–≤–∞–µ–º –Ω–∞ –ø–æ—Å–ª–µ–¥–Ω—é—é —Å–æ—Ö—Ä–∞–Ω—ë–Ω–Ω—É—é –ø—Ä–∏ –∑–∞–∫—Ä—ã—Ç–∏–∏
 		if (getIntent().getExtras().getInt("scroll") > -1) 
 			scrollView.post(new Runnable() {
 			    public void run() {
-			    	scrollView.scrollTo(0, getIntent().getExtras().getInt("scroll"));
+			    	scrollView.scrollTo(0, scrollY);
 			    } 
 			});
 		else {
 			saveScrollPos();
 		}
 				
+    }
+    
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+      super.onSaveInstanceState(savedInstanceState);
+      SharedPreferences.Editor editor = settings.edit();
+      editor.putInt("scroll", scrollView.getScrollY());
+      editor.commit();
+    }
+    
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+    	super.onRestoreInstanceState(savedInstanceState);
+    	settings = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+    	scrollY = settings.getInt("scroll", 0);
+    	// –ø–µ—Ä–µ–º–∞—Ç—ã–≤–∞–µ–º –Ω–∞ –ø–æ—Å–ª–µ–¥–Ω—é—é —Å–æ—Ö—Ä–∞–Ω—ë–Ω–Ω—É—é –ø—Ä–∏ –∑–∞–∫—Ä—ã—Ç–∏–∏
+   		scrollView.post(new Runnable() {
+   		    public void run() {
+   		    	scrollView.scrollTo(0, settings.getInt("scroll", 0));
+   		    } 
+   		});
+    }
+    
+    @Override
+    public void onResume() {
+    	// –ø–µ—Ä–µ–º–∞—Ç—ã–≤–∞–µ–º –Ω–∞ –ø–æ—Å–ª–µ–¥–Ω—é—é —Å–æ—Ö—Ä–∞–Ω—ë–Ω–Ω—É—é –ø—Ä–∏ –∑–∞–∫—Ä—ã—Ç–∏–∏
+   		scrollView.post(new Runnable() {
+   		    public void run() {
+   		    	settings = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+   		    	scrollView.scrollTo(0, settings.getInt("scroll", 0));
+   		    } 
+   		});
+    	super.onResume();
+    }
+    
+    @Override
+    protected void onPause() {
+    	SharedPreferences.Editor editor = settings.edit();
+        editor.putInt("scroll", scrollView.getScrollY());
+        editor.commit();
+    	super.onPause();
     }
     
     @Override
@@ -143,6 +182,7 @@ public class ReaderDisplay extends Activity {
     private void saveScrollPos() {
     	Intent intent = new Intent();
     	intent.putExtra("scroll", scrollView.getScrollY());
+    	scrollY = scrollView.getScrollY();
     	setResult(RESULT_OK, intent);
     }
 }

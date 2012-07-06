@@ -12,7 +12,6 @@ import org.json.JSONObject;
 
 import android.content.Context;
 import android.content.res.AssetManager;
-import android.widget.ExpandableListView;
 import android.widget.SimpleExpandableListAdapter;
 
 public class ExpListAdapterHelper {
@@ -119,7 +118,7 @@ public class ExpListAdapterHelper {
 	}
 	
 	int getGroupNum(String groupText) throws JSONException {
-		// отризаем номер, точку и пробел (+2)
+		// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ (+2)
 		if (jsonObj != null) {
 	        for (int i = 1; i < jsonObj.length() + 1; i++) {
 	        	JSONObject vol = null;

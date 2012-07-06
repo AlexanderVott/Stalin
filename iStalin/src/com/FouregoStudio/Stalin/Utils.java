@@ -3,7 +3,6 @@ package com.FouregoStudio.Stalin;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileDescriptor;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -16,8 +15,6 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.http.util.EncodingUtils;
-
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
@@ -25,6 +22,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.util.Log;
+import android.view.Display;
 
 public class Utils {
 	private Utils() {
@@ -184,9 +182,9 @@ public class Utils {
         Bitmap bm = null;
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inSampleSize = 2; //reduce quality 
-        AssetFileDescriptor fileDescriptor =null;
+        AssetFileDescriptor fileDescriptor = null;
         try {
-            fileDescriptor = context.getContentResolver().openAssetFileDescriptor(selectedImage,"r");
+            fileDescriptor = context.getContentResolver().openAssetFileDescriptor(selectedImage, "r");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -279,4 +277,35 @@ public class Utils {
 		}
 		return counter; 
 	}
+	
+//	public static int getScrOrientation(Context context)
+//	{
+//		Display getOrient = getWindowManager().getDefaultDisplay();
+//	
+//		int orientation = getOrient.getOrientation();
+//	
+//		// Sometimes you may get undefined orientation Value is 0
+//		// simple logic solves the problem compare the screen
+//		// X,Y Co-ordinates and determine the Orientation in such cases
+//		if(orientation == Configuration.ORIENTATION_UNDEFINED) {
+//	
+//			Configuration config = getResources().getConfiguration();
+//			orientation = config.orientation;
+//		
+//			if(orientation == Configuration.ORIENTATION_UNDEFINED) {
+//				//if height and widht of screen are equal then
+//				// it is square orientation
+//				if(getOrient.getWidth() == getOrient.getHeight()) {
+//					orientation = Configuration.ORIENTATION_SQUARE;
+//				}else{ //if widht is less than height than it is portrait
+//					if(getOrient.getWidth() < getOrient.getHeight()){
+//						orientation = Configuration.ORIENTATION_PORTRAIT;
+//					}else{ // if it is not any of the above it will defineitly be landscape
+//						orientation = Configuration.ORIENTATION_LANDSCAPE;
+//					}
+//				}
+//			}
+//		}
+//		return orientation; // return value 1 is portrait and 2 is Landscape Mode
+//	}
 }

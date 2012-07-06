@@ -8,67 +8,84 @@
 	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content"
 		style="@style/Theme.EOT.Light.ScrollView">
-		
+		
 		<LinearLayout
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:orientation="vertical" >
-	        	        
-	        <ImageView
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    android:src="@drawable/eot_logo_300"
-			    android:layout_gravity="center_horizontal" />
-	        
-	        <TextView
-			    android:layout_width="fill_parent"
-			    android:layout_height="wrap_content"
-			    style="@style/Theme.EOT.Light.TextView.Bold.Red"
-			    android:textStyle="normal"
-			    android:gravity="center_horizontal"
-	            android:text="@string/app_name" />
-		        
-	        <View
-				style="@style/Theme.EOT.Light.Empty" />
-		
-			<TextView
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    style="@style/Theme.EOT.Light.TextView.Bold.Red"
-	            android:text="@string/author_title_developer" />
-				
-			<TextView
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    style="@style/Theme.EOT.Light.TextView.Bold"
-	            android:text="@string/author_develoepr_0" />
-				
-			<View
-				style="@style/Theme.EOT.Light.Empty" />
-				
-			<TextView
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    style="@style/Theme.EOT.Light.TextView.Bold.Red"
-	            android:text="@string/author_title_thanks" />
-				
-			<TextView
-			    android:layout_width="wrap_content"
-			    android:layout_height="wrap_content"
-			    style="@style/Theme.EOT.Light.TextView.Bold"
-	            android:text="@string/author_thanks_0" />
-			
-			<View
-				style="@style/Theme.EOT.Light.Empty" />
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:orientation="vertical" >
 
-			<TextView
-			    android:layout_width="fill_parent"
-			    android:layout_height="wrap_content"
-			    style="@style/Theme.EOT.Light.TextView.Bold.Red"
-			    android:textStyle="normal"
-			    android:gravity="center_horizontal"
-	            android:text="@string/slogan" />
-		
+		    <ImageView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_gravity="center_horizontal"
+		        android:src="@drawable/eot_logo_300" />
+
+		    <TextView
+		        style="@style/Theme.EOT.Light.TextView.Bold.Red"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:gravity="center_horizontal"
+		        android:text="@string/app_name"
+		        android:textStyle="normal" />
+
+		    <View style="@style/Theme.EOT.Light.Empty" />
+
+		    <TextView
+		        style="@style/Theme.EOT.Light.TextView.Bold.Red"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/author_title_developer" />
+
+		    <TextView
+		        style="@style/Theme.EOT.Light.TextView.Bold"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/author_develoepr_0" />
+
+		    <View style="@style/Theme.EOT.Light.Empty" />
+
+		    <TextView
+		        style="@style/Theme.EOT.Light.TextView.Bold.Red"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/author_title_design_icons" />
+
+		    <TextView
+		        style="@style/Theme.EOT.Light.TextView.Bold"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/author_design_icons" />
+
+		    <View style="@style/Theme.EOT.Light.Empty" />
+
+		    <TextView
+		        style="@style/Theme.EOT.Light.TextView.Bold.Red"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/author_title_thanks" />
+
+		    <TextView
+		        style="@style/Theme.EOT.Light.TextView.Bold"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/author_thanks_0" />
+
+		    <TextView
+		        style="@style/Theme.EOT.Light.TextView.Bold"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="@string/author_thanks_1" />
+
+		    <View style="@style/Theme.EOT.Light.Empty" />
+
+		    <TextView
+		        style="@style/Theme.EOT.Light.TextView.Bold.Red"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:gravity="center_horizontal"
+		        android:text="@string/slogan"
+		        android:textStyle="normal" />
 		</LinearLayout>
+
 	</ScrollView>
 </FrameLayout>
