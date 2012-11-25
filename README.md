@@ -18,6 +18,8 @@
 Сохранение последнего открытого тома и позиции прокрутки с последующим авто-открытием при повторном запуске приложения
 Оформление стандартной версии интерфейса близкой к дизайну сайта ВКСВ
 
+[Ссылка на Google play](https://play.google.com/store/apps/details?id=com.FouregoStudio.Stalin&feature=search_result#?t=W251bGwsMSwxLDEsImNvbS5Gb3VyZWdvU3R1ZGlvLlN0YWxpbiJd)
+
 Скриншоты
 ---------
 ![scr1](https://lh5.googleusercontent.com/-RbRJQpA_knw/T6KWG3Zby3I/AAAAAAAAEP0/4VGsKtA0vCo/s480/device-2012-05-03-202556.png "scr1")
